@@ -39,39 +39,39 @@ class Game{
     })
 
     if(crash){
-        this.stop()
+        this.stop();
     }
    }
     
    updateObstacles(){
     for(let i=0; i<this.obstacles.length; i++){
-        this.obstacles[i].y -=1;
+        this.obstacles[i].y +=1;
         this.obstacles[i].draw();
    }
 
 
     if(this.frames % 180 === 0){
 
-        let y = 500
+        let y = 0
 
-        let minWidth = 20
-        let maxWidth = 400
+        let minWidth = 75;
+        let maxWidth = 300;
 
         let width = Math.floor(Math.random() * (maxWidth - minWidth +1) + minWidth)
 
-        let minGap = 75
-        let maxGap = 200;
+        let minGap = 100;
+        let maxGap = 300;
 
         //this creates the gap
         let gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
 
-   this.obstacles.push(new Component(y, 0, 50, width, 'red', this.ctx))
+   this.obstacles.push(new Component(0 + gap, 0, width, 50, 'red', this.ctx)
+   )
 
-   this.obstacles.push(new Component(y, width + gap, 50, y - this.width - gap, 'red', this.ctx));
+         }
+     }
+}
 
-}
-}
-}
 /*     window.onload = () => {
     document.getElementById('start-button').onclick = () => {
       startGame();

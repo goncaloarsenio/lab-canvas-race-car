@@ -2,7 +2,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-const player = new Component(225, 600, 50, 50, ctx);
+const player = new Player(225, 600, 50, 50, ctx);
 
 let game = new Game(ctx, 500, 700, player);
 
